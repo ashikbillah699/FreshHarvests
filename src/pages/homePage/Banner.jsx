@@ -3,7 +3,8 @@ import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const Banner = () => {
     return (
-        <section className="bg-white dark:bg-neutral text-neutral-content py-10 px-4 md:px-10 ">
+        <div className=' '>
+            <section className="max-w-[1200px] mx-auto bg-white dark:bg-neutral text-neutral-content py-10 px-4 md:px-10 ">
             <div className="container text-center md:text-start mx-auto grid md:grid-cols-2 items-center gap-10">
                 {/* Text Content */}
                 <div className="space-y-6">
@@ -55,6 +56,7 @@ const Banner = () => {
                 </div>
             </div>
         </section>
+        </div>
     );
 };
 

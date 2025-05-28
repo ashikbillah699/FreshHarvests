@@ -3,24 +3,23 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const links = <>
-        <NavLink><li className='mr-7 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Home</li></NavLink>
-        <NavLink><li className='mr-7 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Shop</li></NavLink>
-        <NavLink><li className='mr-7 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>About Us</li></NavLink>
-        <NavLink><li className='mr-7 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Blog</li></NavLink>
+        <NavLink to='/'><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Home</li></NavLink>
+        <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Shop</li></NavLink>
+        <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>About Us</li></NavLink>
+        <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Blog</li></NavLink>
     </>
     return (
         <div className="navbar">
             <div className="navbar-start">
-
                 <FaLeaf className="text-[#749B3F] w-10 h-10 " />
                 <a className="text-2xl font-bold pl-2">Fresh Harvests</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal pr-20">
+                <ul className="menu menu-horizontal pr-6">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end flex gap-4 justify-center items-center">
+            <div className="navbar-end flex gap-4 justify-end items-center">
                 <FaHeart className='hidden md:inline'/>
                 <span className='hidden md:inline'>Favorite</span>
                 <div className="indicator">

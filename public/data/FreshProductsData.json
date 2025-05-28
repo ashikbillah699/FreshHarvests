@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Mushroom",
+    "price": "$2.3/kg",
+    "description": "Fresh and organic mushrooms, perfect for cooking.",
+    "quantity": "1 kg",
+    "category": "Vegetables",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  },
+  {
+    "id": 2,
+    "name": "Mustard",
+    "price": "$1.3/kg",
+    "description": "High-quality mustard seeds for flavorful dishes.",
+    "quantity": "1 kg",
+    "category": "Vegetables",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  },
+  {
+    "id": 3,
+    "name": "Orange",
+    "price": "$4.2/kg",
+    "description": "Sweet and juicy oranges, rich in vitamin C.",
+    "quantity": "1 kg",
+    "category": "Fruits",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  },
+  {
+    "id": 4,
+    "name": "Pomegranate",
+    "price": "$1.1/kg",
+    "description": "Fresh pomegranates full of antioxidants.",
+    "quantity": "1 kg",
+    "category": "Fruits",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  },
+  {
+    "id": 5,
+    "name": "Broccoli",
+    "price": "$2.8/kg",
+    "description": "Green and healthy broccoli, great for salads and cooking.",
+    "quantity": "1 kg",
+    "category": "Vegetables",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  },
+  {
+    "id": 6,
+    "name": "Banana",
+    "price": "$1.9/kg",
+    "description": "Fresh bananas, rich in potassium and energy.",
+    "quantity": "1 kg",
+    "category": "Fruits",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  },
+  {
+    "id": 7,
+    "name": "Carrot",
+    "price": "$1.5/kg",
+    "description": "Crunchy and fresh carrots, loaded with vitamins.",
+    "quantity": "1 kg",
+    "category": "Vegetables",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  },
+  {
+    "id": 8,
+    "name": "Apple",
+    "price": "$3.4/kg",
+    "description": "Sweet and crisp apples, perfect for snacks.",
+    "quantity": "1 kg",
+    "category": "Fruits",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
+  }
+]
