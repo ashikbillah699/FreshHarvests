@@ -2,6 +2,9 @@ import { FaHeart, FaLeaf } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+    const openModal = () => {
+    document.getElementById('my_modal_3')?.showModal();
+  };
     const links = <>
         <NavLink to='/'><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Home</li></NavLink>
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Shop</li></NavLink>
@@ -38,7 +41,7 @@ const Navbar = () => {
                     <span className="badge badge-sm indicator-item">8</span>
                 </div>
                 <span className='hidden md:inline'>cart</span>
-                <a className="btn btn-outline">Sign in</a>
+                <button onClick={openModal} className="btn btn-outline">Sign in</button>
 
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

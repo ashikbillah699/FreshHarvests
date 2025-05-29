@@ -1,46 +1,13 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useProducts from '../../hooks/useProducts';
 
-const RelatedProduct = () => {
-    const filteredProducts = [
-        {
-            "id": 1,
-            "name": "Mushroom",
-            "price": "$2.3/kg",
-            "description": "Fresh and organic mushrooms, perfect for cooking.",
-            "quantity": "1 kg",
-            "category": "Vegetables",
-            "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
-        },
-        {
-            "id": 2,
-            "name": "Mustard",
-            "price": "$1.3/kg",
-            "description": "High-quality mustard seeds for flavorful dishes.",
-            "quantity": "1 kg",
-            "category": "Vegetables",
-            "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
-        },
-        {
-            "id": 3,
-            "name": "Orange",
-            "price": "$4.2/kg",
-            "description": "Sweet and juicy oranges, rich in vitamin C.",
-            "quantity": "1 kg",
-            "category": "Fruits",
-            "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
-        },
-        {
-            "id": 4,
-            "name": "Pomegranate",
-            "price": "$1.1/kg",
-            "description": "Fresh pomegranates full of antioxidants.",
-            "quantity": "1 kg",
-            "category": "Fruits",
-            "image": "https://static.vecteezy.com/system/resources/thumbnails/031/097/640/small_2x/closeup-of-mustard-flowers-png.png"
-        },
-    ]
+const RelatedProduct = ({categoryId}) => {
+    const [products] = useProducts()
+    console.log(products)
+    const filteredProducts = products.filter(product => (product.categoryId == categoryId))
+    
 
     return (
         <section className="py-10 px-4 md:px-16">
@@ -57,14 +24,14 @@ const RelatedProduct = () => {
                     >
                         <figure className="px-4 pt-4 bg-gray-50 m-4 pb-4 rounded-md">
                             <img
-                                src={`${product.image}`}
-                                alt={product.name}
+                                src={`${product.images}`}
+                                alt={product.productName}
                                 className="rounded-xl h-28 object-contain"
                             />
                         </figure>
                         <div className="card-body items-center text-center">
-                            <h2 className="card-title text-base md:text-lg">{product.name}</h2>
-                            <p className="text-sm text-gray-500">{product.price}</p>
+                            <h2 className="card-title text-base md:text-lg">{product.productName}</h2>
+                            <p className="text-sm text-gray-500">{product.price}/kg</p>
                             <div className="w-full">
                                 <Link to={`/productDetails/${product.id}`}>
                                     <button className="btn btn-sm mt-2 bg-white text-black w-full hover:bg-orange-500 hover:text-white transition duration-500">
@@ -75,12 +42,6 @@ const RelatedProduct = () => {
                         </div>
                     </div>
                 ))}
-            </div>
-
-            <div className="text-center mt-8">
-                <button className="btn btn-outline btn-sm md:btn-md px-6 text-orange-500 border-orange-500">
-                    See All Products
-                </button>
             </div>
         </section>
     );
