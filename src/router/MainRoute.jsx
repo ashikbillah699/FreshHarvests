@@ -6,10 +6,9 @@ import DashboardLayout from "../dashboard/DashboardLayout";
 import Profile from "../dashboard/Profile";
 import ProfileUpdate from "../dashboard/profileUpdate";
 import MyShoping from "../dashboard/user/MyShoping";
-import History from "../dashboard/user/History";
 import AllUser from "../dashboard/admin/AllUser";
-import ManageUser from "../dashboard/admin/ManageUser";
 import ErrorPage from "../sheardComponent/ErrorPage";
+import AddProduct from "../dashboard/admin/AddProduct";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +33,7 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <Profile></Profile>
             },
+            // user route
             {
                 path: '/dashboard/update/:id',
                 element: <ProfileUpdate></ProfileUpdate>
@@ -42,23 +42,24 @@ const router = createBrowserRouter([
                 path: '/dashboard/myShoping',
                 element: <MyShoping></MyShoping>
             },
-            {
-                path: '/dashboard/history',
-                element: <History></History>
-            },
+            // Admin rote
             {
                 path: '/dashboard/allUser',
                 element: <AllUser></AllUser>
             },
             {
-                path: '/dashboard/manageUser',
-                element: <ManageUser></ManageUser>
+                path: '/dashboard/addProduct',
+                element: <AddProduct></AddProduct>
             },
             {
                 path: '*',
                 element: <ErrorPage></ErrorPage>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 ])
 
