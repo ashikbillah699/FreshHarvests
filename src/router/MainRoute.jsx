@@ -5,7 +5,8 @@ import ProductDetails from "../pages/homePage/ProductDetails";
 import DashboardLayout from "../dashboard/DashboardLayout";
 import Admin from "../dashboard/admin/Admin";
 import User from "../dashboard/user/User";
-import Profile from "../sheardComponent/Profile";
+import Profile from "../dashboard/Profile";
+import ProfileUpdate from "../dashboard/profileUpdate";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <Profile></Profile>
+            },
+            {
+                path: '/dashboard/update/:id',
+                element: <ProfileUpdate></ProfileUpdate>
             }
         ]
     }

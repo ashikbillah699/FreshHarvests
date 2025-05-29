@@ -2,6 +2,7 @@ import React from 'react';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import useAllUsers from '../hooks/useAllUsers';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
     const user = useSelector(state => state.auth.user);
@@ -12,10 +13,15 @@ const Profile = () => {
     }
     const mainRole = users?.data.find(u => u.email === user.email);
 
+
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
             <div className="max-w-lg w-full bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="relative bg-green-500 h-28">
+                    <Link to={`/dashboard/update/${mainRole.id}`}>
+                        <button className='badge mt-2 ml-2'>Update</button>
+                    </Link>
                     <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2">
                         <img
                             src={mainRole.photoURL}
