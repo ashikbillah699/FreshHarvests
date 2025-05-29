@@ -1,3 +1,4 @@
+import Footer from '../sheardComponent/Footer';
 import Navbar from '../sheardComponent/Navbar';
 import { Outlet } from 'react-router-dom';
 
@@ -11,7 +12,7 @@ const MainLayout = () => {
                 <Outlet></Outlet>
             </div>
             <div>
-
+                <Footer></Footer>
             </div>
         </div>
     );

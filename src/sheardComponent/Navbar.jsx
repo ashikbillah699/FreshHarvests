@@ -9,7 +9,7 @@ const Navbar = () => {
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Blog</li></NavLink>
     </>
     return (
-        <div className="navbar">
+        <div className="navbar border-b">
             <div className="navbar-start">
                 <FaLeaf className="text-[#749B3F] w-10 h-10 " />
                 <a className="text-2xl font-bold pl-2">Fresh Harvests</a>

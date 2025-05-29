@@ -63,11 +63,13 @@ const FreshProducts = () => {
                         <div className="card-body items-center text-center">
                             <h2 className="card-title text-base md:text-lg">{product.name}</h2>
                             <p className="text-sm text-gray-500">{product.price}</p>
-                            <Link to={`/productDetails/${product.id}`}>
-                                <button className="btn btn-sm mt-2 bg-white text-black w-full hover:bg-orange-500 hover:text-white transition duration-500">
-                                    <FaShoppingCart className="mr-1" /> Add to cart
-                                </button>
-                            </Link>
+                            <div className="w-full">
+                                <Link to={`/productDetails/${product.id}`}>
+                                    <button className="btn btn-sm mt-2 bg-white text-black w-full hover:bg-orange-500 hover:text-white transition duration-500">
+                                        <FaShoppingCart className="mr-1" /> Add to cart
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 ))}

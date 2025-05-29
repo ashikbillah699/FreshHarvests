@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
 import { FiMinus, FiPlus } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
+import RelatedProduct from './RelatedProduct';
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -28,7 +29,8 @@ const ProductDetails = () => {
     </div>;
 
     return (
-        <div className="max-w-5xl mx-auto px-4 py-10">
+        <div>
+              <div className="max-w-5xl mx-auto px-4 py-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <img
                     src={product.image}
@@ -86,6 +88,9 @@ const ProductDetails = () => {
                 </div>
             </div>
         </div>
+        <RelatedProduct></RelatedProduct>
+        </div>
+      
     );
 };
 
