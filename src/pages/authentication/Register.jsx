@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaEye, FaEyeSlash, FaFacebook, FaGoogle } from 'react-icons/fa';
-import { useDispatch, useSelector,  } from 'react-redux';
+import { useDispatch, useSelector, } from 'react-redux';
 import { googleThunk, registerThunk } from '../../features/authThunks';
 import { toast } from 'react-toastify';
 
@@ -15,55 +15,63 @@ const Register = () => {
     console.log(user, loading, error)
 
     // save All Register Data
-    const saveUserData = async (user, name) => {
-        try {
-            const response = await fetch("https://code-commando.com/api/v1/users/register", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: user.email,
-                    fullName: name || user.displayName || "No Name",
-                    role: 'user'
-                }),
-            });
-
-            const data = await response.json();
-            console.log(" User data saved:", data);
-        } catch (error) {
-            console.log(error)
-        }
-    };
-
+  
     const handleRegister = async (e) => {
         e.preventDefault();
         const fullName = e.target.fullName.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+
         try {
             const user = await dispatch(registerThunk({ email, password })).unwrap();
             if (user?.uid) {
                 e.target.reset();
                 document.getElementById('my_modal_4')?.close();
+
+                const userData = {
+                    fullName: fullName || user.displayName || "No Name",
+                    userName: "",
+                    email: user.email,
+                    profileImage: null,
+                    role: "USER"
+                };
+
+                try {
+                    const response = await fetch("https://code-commando.com/api/v1/users/register", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(userData),
+                    });
+
+                    const result = await response.json();
+                    console.log(result);
+
+                    if (response.ok) {
+                        toast.success("User saved to database!");
+                    } else {
+                        toast.error("database not found for save User data.");
+                    }
+                } catch (err) {
+                    console.error("Error:", err.message);
+                    toast.error("Something went wrong while saving user.");
+                }
+
                 toast.success("Registration successful!");
-                saveUserData(user?.email, fullName )
             }
         } catch (error) {
             e.target.reset();
             document.getElementById('my_modal_4')?.close();
             toast.error(error.message || "Registration failed!");
         }
-
     };
-
+    
     const handleGoogle = () => {
         dispatch(googleThunk());
         document.getElementById('my_modal_4')?.close();
         // toast.success("Registration successful!");
     };
-
-
 
     return (
         <div>

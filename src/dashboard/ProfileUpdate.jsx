@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import useAllUsers from "../hooks/useAllUsers";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProfileUpdate = () => {
     const user = useSelector(state => state.auth.user);
     const [users] = useAllUsers();
+    const navigate= useNavigate();
     const [formData, setFormData] = useState({
         fullName: '',
         userName: '',
@@ -51,6 +53,7 @@ const ProfileUpdate = () => {
             const data = await res.json();
             console.log("User updated successfully:", data);
             toast.success("User updated successfully!");
+            navigate('/dashboard')
         }
         catch (err) {
             toast.error("Update failed: " + err.message);
@@ -62,7 +65,7 @@ const ProfileUpdate = () => {
     }
 
     return (
-        <div className="max-w-2xl mx-auto p-4">
+        <div className="max-w-2xl mx-auto p-4 md:mt-20">
             <div className="bg-white shadow-md rounded-xl p-6 space-y-4">
                 <h2 className="text-2xl font-bold text-center">Update User</h2>
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">

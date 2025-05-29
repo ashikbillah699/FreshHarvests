@@ -3,10 +3,13 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/homePage/Home";
 import ProductDetails from "../pages/homePage/ProductDetails";
 import DashboardLayout from "../dashboard/DashboardLayout";
-import Admin from "../dashboard/admin/Admin";
-import User from "../dashboard/user/User";
 import Profile from "../dashboard/Profile";
 import ProfileUpdate from "../dashboard/profileUpdate";
+import MyShoping from "../dashboard/user/MyShoping";
+import History from "../dashboard/user/History";
+import AllUser from "../dashboard/admin/AllUser";
+import ManageUser from "../dashboard/admin/ManageUser";
+import ErrorPage from "../sheardComponent/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -25,16 +28,8 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element:<DashboardLayout></DashboardLayout>,
+        element: <DashboardLayout></DashboardLayout>,
         children: [
-            {
-                path: '/dashboard/admin',
-                element: <Admin></Admin>
-            },
-            {
-                path: '/dashboard/user',
-                element: <User></User>
-            },
             {
                 path: '/dashboard',
                 element: <Profile></Profile>
@@ -42,6 +37,26 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/update/:id',
                 element: <ProfileUpdate></ProfileUpdate>
+            },
+            {
+                path: '/dashboard/myShoping',
+                element: <MyShoping></MyShoping>
+            },
+            {
+                path: '/dashboard/history',
+                element: <History></History>
+            },
+            {
+                path: '/dashboard/allUser',
+                element: <AllUser></AllUser>
+            },
+            {
+                path: '/dashboard/manageUser',
+                element: <ManageUser></ManageUser>
+            },
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
             }
         ]
     }
