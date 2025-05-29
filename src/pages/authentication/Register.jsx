@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { FaEye, FaEyeSlash, FaFacebook, FaGoogle } from 'react-icons/fa';
+import { useDispatch,  } from 'react-redux';
+import { googleThunk, registerThunk } from '../../features/authThunks';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const openModal = () => {
@@ -8,6 +11,34 @@ const Register = () => {
     };
     const [showPassword, setShowPassword] = useState(false);
 
+    const dispatch = useDispatch();
+    // const { user, loading, error } = useSelector((state) => state.auth);
+    // console.log(user, loading, error)
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        try {
+            const user = await dispatch(registerThunk({ email, password })).unwrap();
+            if (user?.uid) {
+                e.target.reset();
+                document.getElementById('my_modal_4')?.close();
+                toast.success("Registration successful!");
+            }
+        } catch (error) {
+            e.target.reset();
+            document.getElementById('my_modal_4')?.close();
+            toast.error(error.message || "Registration failed!");
+        }
+
+    };
+
+    const handleGoogle = () => {
+        dispatch(googleThunk());
+        document.getElementById('my_modal_4')?.close();
+        // toast.success("Registration successful!");
+    };
     return (
         <div>
             <dialog id="my_modal_4" className="modal">
@@ -19,7 +50,7 @@ const Register = () => {
                         <div className="bg-white w-full max-w-md ">
                             <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
 
-                            <form className="space-y-4">
+                            <form onSubmit={handleRegister} className="space-y-4">
                                 <div>
                                     <label className="block mb-1 font-medium text-sm">Full Name</label>
                                     <input
@@ -32,6 +63,7 @@ const Register = () => {
                                 <div>
                                     <label className="block mb-1 font-medium text-sm">Email</label>
                                     <input
+                                        name='email'
                                         type="email"
                                         placeholder="Enter your email"
                                         className="input input-bordered w-full"
@@ -41,6 +73,7 @@ const Register = () => {
                                 <div className="relative">
                                     <label className="block mb-1 font-medium text-sm">Password</label>
                                     <input
+                                        name='password'
                                         type={showPassword ? "text" : "password"}
                                         placeholder="Enter your password"
                                         className="input input-bordered w-full pr-10"
@@ -64,7 +97,7 @@ const Register = () => {
                             <div className="divider text-xs mt-6">Or Sign Up with</div>
 
                             <div className="flex gap-4 justify-center">
-                                <button className="btn w-1/2 border border-gray-300">
+                                <button onClick={handleGoogle} className="btn w-1/2 border border-gray-300">
                                     <FaGoogle className="mr-2" /> Google
                                 </button>
                                 <button className="btn w-1/2 border border-gray-300">

@@ -1,16 +1,23 @@
 import { FaHeart, FaLeaf } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { logoutThunk } from '../features/authThunks';
 
 const Navbar = () => {
+    const user = useSelector(state => state.auth.user);
+    const dispatch = useDispatch()
+
     const openModal = () => {
-    document.getElementById('my_modal_3')?.showModal();
-  };
+        document.getElementById('my_modal_3')?.showModal();
+    };
+
     const links = <>
         <NavLink to='/'><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Home</li></NavLink>
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Shop</li></NavLink>
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>About Us</li></NavLink>
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Blog</li></NavLink>
     </>
+
     return (
         <div className="navbar border-b">
             <div className="navbar-start">
@@ -23,7 +30,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-4 justify-end items-center">
-                <FaHeart className='hidden md:inline'/>
+                <FaHeart className='hidden md:inline' />
                 <span className='hidden md:inline'>Favorite</span>
                 <div className="indicator">
                     <svg
@@ -41,8 +48,10 @@ const Navbar = () => {
                     <span className="badge badge-sm indicator-item">8</span>
                 </div>
                 <span className='hidden md:inline'>cart</span>
-                <button onClick={openModal} className="btn btn-outline">Sign in</button>
-
+                {
+                    user && user?.uid ? <button onClick={() => dispatch(logoutThunk())} className="btn btn-outline">Log out</button>
+                        : <button onClick={openModal} className="btn btn-outline">Sign in</button>
+                }
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
