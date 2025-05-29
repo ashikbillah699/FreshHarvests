@@ -17,7 +17,7 @@ const Banner = () => {
                         </p>
                         <div className="flex gap-20 flex-wrap justify-center md:justify-start">
                             <div>
-                                <button className="bg-primary bg-[#fc823c] px-4 py-2 text-sm rounded-md font-bold hover:bg-primary-focus transition duration-500">
+                                <button className="bg-[#fc823c] px-4 py-2 text-sm rounded-md font-bold hover:bg-primary-focus transition duration-500">
                                     Shop Now
                                 </button>
                             </div>

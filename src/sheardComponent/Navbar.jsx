@@ -2,10 +2,13 @@ import { FaHeart, FaLeaf } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logoutThunk } from '../features/authThunks';
+import useAllUsers from '../hooks/useAllUsers';
 
 const Navbar = () => {
     const user = useSelector(state => state.auth.user);
     const dispatch = useDispatch()
+    const [users] = useAllUsers()
+    console.log(users)
 
     const openModal = () => {
         document.getElementById('my_modal_3')?.showModal();
@@ -16,6 +19,9 @@ const Navbar = () => {
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Shop</li></NavLink>
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>About Us</li></NavLink>
         <NavLink><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Blog</li></NavLink>
+        {
+            user && <NavLink to='/dashboard'><li className='mx-3 hover:border-b-[#749B3F] transition duration-500 border-b border-white'>Dashboard</li></NavLink>
+        }
     </>
 
     return (
