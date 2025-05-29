@@ -9,6 +9,8 @@ import MyShoping from "../dashboard/user/MyShoping";
 import AllUser from "../dashboard/admin/AllUser";
 import ErrorPage from "../sheardComponent/ErrorPage";
 import AddProduct from "../dashboard/admin/AddProduct";
+import ManageProducts from "../dashboard/admin/ManageProducts";
+import UpdateProduct from "../dashboard/admin/UpdateProduct";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addProduct',
                 element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/manageProducts',
+                element: <ManageProducts></ManageProducts>
+            },
+            {
+                path: '/dashboard/updateProduct/:id',
+                element: <UpdateProduct></UpdateProduct>
             },
             {
                 path: '*',

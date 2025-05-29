@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 import { logoutThunk } from "../features/authThunks";
-import { MdClass, MdManageAccounts, MdOutlineHomeWork } from "react-icons/md";
+import { MdOutlineHomeWork } from "react-icons/md";
 import { RiMenuAddLine } from "react-icons/ri";
 import { ImProfile } from "react-icons/im";
 import useAllUsers from "../hooks/useAllUsers";
-import { HiUser } from "react-icons/hi";
-import { FaBasketShopping, FaLeaf, FaUsers } from "react-icons/fa6";
+import { FaBasketShopping, FaLeaf, FaProductHunt, FaUsers } from "react-icons/fa6";
 import { FaHistory } from "react-icons/fa";
 
 const DashboardLayout = () => {
@@ -39,7 +38,7 @@ const DashboardLayout = () => {
                         {mainRole.role == "ADMIN" && <>
                             <li><NavLink to='/dashboard/addProduct' className="hover:text-black duration-300 font-bold flex items-center gap-3"><FaLeaf />Add Product</NavLink></li>
                             <li><NavLink to='/dashboard/allUser' className="hover:text-black duration-300 font-bold flex items-center gap-3"><FaUsers /> All Users</NavLink></li>
-                            <li><NavLink to='/dashboard/manageUser' className="hover:text-black duration-300 font-bold flex items-center gap-3"><MdManageAccounts />Manage Users</NavLink></li>
+                            <li><NavLink to='/dashboard/manageProducts' className="hover:text-black duration-300 font-bold flex items-center gap-3"><FaProductHunt />Manage Products</NavLink></li>
                         </>}
 
                         <hr className=" border-gray-50" />
