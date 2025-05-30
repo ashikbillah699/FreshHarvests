@@ -16,7 +16,7 @@ const SpecialOffer = () => {
 
     return (
         <div
-            className="bg-cover bg-center"
+            className="bg-cover bg-center mt-28"
             style={{ backgroundImage: "url('https://img.freepik.com/free-photo/plant-leaves-with-fresh-tropical-fruits_23-2148122243.jpg?semt=ais_hybrid&w=740')" }}>
             <div className="w-full max-w-[1200px] mx-auto px-4 py-16 items-center " >
                 {/* text */}
