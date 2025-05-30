@@ -12,8 +12,6 @@ const Login = () => {
         document.getElementById('my_modal_4')?.showModal();
     };
     const dispatch = useDispatch();
-    // const { user, loading, error } = useSelector((state) => state.auth);
-    // console.log(user, loading, error)
 
     const handleLogin = async (e) => {
         e.preventDefault();

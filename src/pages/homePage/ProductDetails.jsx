@@ -27,7 +27,6 @@ const ProductDetails = () => {
 
     const matchedCategory = categories?.find(cat => cat.id === product?.categoryId);
     const categoryName = matchedCategory?.categoryName || "Unknown";
-    console.log(categoryName)
 
     if (!product) return <div className="text-center py-10">Loading...<span className="loading loading-spinner loading-lg"></span>
     </div>;

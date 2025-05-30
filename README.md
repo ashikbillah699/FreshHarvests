@@ -1,12 +1,29 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Fresh Harvest
 
-Currently, two official plugins are available:
+Fresh Harvest is a modern and responsive e-commerce website where users can buy fresh fruits and vegetables. It is a front-end project built using React, Redux, Tailwind CSS, DaisyUI, and Firebase Authentication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Live Site:https://freshharvests-8b155.web.app/
 
-## Expanding the ESLint configuration
+### **Admin Login (For Check)**
+- **Email**: john.doe@example.com
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Repository Link
+- **Client:** https://github.com/ashikbillah699/FreshHarvests
+
+### Technical Usage
+#### **Frontend:**
+- React.js
+- Redux
+- Tailwind CSS
+- DaisyUI
+- React Router
+- Firebase Authentication
+
+###  Main Features
+
+- 🔹 **User Registration & Login** – User account creation and login system
+- 🔹 **Profile Management** – User profile update
+- 🔹 **Category Management** – Category creation, editing and deletion facility
+- 🔹 **Admin Product Management** – Product addition, viewing, editing and deletion
+- 🔹 **Authentication** – Secure authentication and protected route

@@ -18,7 +18,7 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: false,
     }),
-  // এখানে আর thunk add করো না, এটা আগেই default এ আছে
+  
 });
 
 export const persistor = persistStore(store);

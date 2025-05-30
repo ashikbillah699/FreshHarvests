@@ -3,8 +3,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useCategories from "../../hooks/useCategories";
 
-// const categories = ["All", "Fruits", "Vegetables", "Salad"];
-
 const FreshProducts = () => {
     const [categories] = useCategories();
     const [products, setProducts] = useState([]);

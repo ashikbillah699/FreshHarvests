@@ -5,7 +5,6 @@ import useProducts from '../../hooks/useProducts';
 
 const RelatedProduct = ({categoryId}) => {
     const [products] = useProducts()
-    console.log(products)
     const filteredProducts = products.filter(product => (product.categoryId == categoryId))
     
 
@@ -16,7 +15,7 @@ const RelatedProduct = ({categoryId}) => {
                 <h2 className="text-3xl md:text-4xl font-bold">Related Products</h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {filteredProducts.map((product) => (
                     <div
                         key={product.id}

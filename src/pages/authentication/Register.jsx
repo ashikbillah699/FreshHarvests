@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaEye, FaEyeSlash, FaFacebook, FaGoogle } from 'react-icons/fa';
-import { useDispatch, useSelector, } from 'react-redux';
+import { useDispatch, } from 'react-redux';
 import { googleThunk, registerThunk } from '../../features/authThunks';
 import { toast } from 'react-toastify';
 
@@ -11,10 +11,6 @@ const Register = () => {
     };
     const [showPassword, setShowPassword] = useState(false);
     const dispatch = useDispatch();
-    const { user, loading, error } = useSelector((state) => state.auth);
-    console.log(user, loading, error)
-
-    // save All Register Data
   
     const handleRegister = async (e) => {
         e.preventDefault();

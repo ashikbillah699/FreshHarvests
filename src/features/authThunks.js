@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
-// ✅ Helper: Only return serializable fields
+
 const serializeUser = (user) => ({
     uid: user.uid,
     email: user.email,
@@ -17,7 +17,7 @@ const serializeUser = (user) => ({
     emailVerified: user.emailVerified,
 });
 
-// ✅ Register user
+
 export const registerThunk = createAsyncThunk(
     "auth/register",
     async ({ email, password }, { rejectWithValue }) => {
@@ -30,7 +30,7 @@ export const registerThunk = createAsyncThunk(
     }
 );
 
-// ✅ Login user
+
 export const loginThunk = createAsyncThunk(
     "auth/login",
     async ({ email, password }, { rejectWithValue }) => {
@@ -43,7 +43,7 @@ export const loginThunk = createAsyncThunk(
     }
 );
 
-// ✅ Logout user
+
 export const logoutThunk = createAsyncThunk(
     "auth/logout",
     async (_, { rejectWithValue }) => {
@@ -55,7 +55,7 @@ export const logoutThunk = createAsyncThunk(
     }
 );
 
-// ✅ Login with Google
+
 export const googleThunk = createAsyncThunk(
     "auth/google",
     async (_, { rejectWithValue }) => {
