@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import useCategories from "../../hooks/useCategories";
 import { BiSolidCommentDetail } from "react-icons/bi";
+import leaf from '../../assets/leaf.png';
+
 
 const FreshProducts = () => {
     const [categories] = useCategories();
@@ -35,6 +36,13 @@ const FreshProducts = () => {
 
     return (
         <section id="shop" className="max-w-[1200px] w-full mx-auto pt-10 px-4 md:px-16 md:mt-16">
+            <div className="relative">
+                            <img
+                                src={leaf}
+                                alt="Decorative leaf"
+                                className="absolute top-6 -right-16 w-32 -rotate-90 hidden sm:block"
+                            />
+                        </div>
             <div className="text-center mb-6">
                 <p className="btn badge bg-gray-50 text-sm text-green-600 font-semibold">Our Products</p>
                 <h2 className="text-3xl md:text-4xl font-bold">Our Fresh Products</h2>

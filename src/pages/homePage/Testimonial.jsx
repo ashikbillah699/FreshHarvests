@@ -3,6 +3,7 @@ import { FaQuoteLeft } from 'react-icons/fa';
 import testimonialA from '../../assets/Testimonial.jpg'
 import testimonialb from '../../assets/testi3.jpg'
 import testimonialc from '../../assets/testi4.jpg'
+import leaf from '../../assets/leaf.png';
 
 const testimonials = [
     {
@@ -37,6 +38,13 @@ const Testimonial = () => {
     return (
         <div className="bg-white pt-24 px-4 md:px-8 lg:px-0 flex justify-center">
             <div className="max-w-3xl mx-auto  text-center relative">
+                <div className="relative">
+                    <img
+                        src={leaf}
+                        alt="Decorative leaf"
+                        className="absolute top-8 -left-16 w-16 -rotate-90 hidden sm:block"
+                    />
+                </div>
                 {/* Top Section */}
                 <div className="mb-12">
                     <span className="text-sm text-green-600 font-semibold bg-green-50 px-3 py-1 rounded-full">
@@ -56,7 +64,7 @@ const Testimonial = () => {
                         <img
                             src={testimonials[current].image}
                             alt={testimonials[current].name}
-                            className="w-36 h-52 rounded-full object-cover border-4 border-green-200"
+                            className="w-36 h-56 rounded-full object-cover border-green-200"
                         />
                     </div>
                     <div className="w-4/5 bg-gray-100 p-6 rounded-xl text-left shadow-md relative">
@@ -74,9 +82,8 @@ const Testimonial = () => {
                         <button
                             key={index}
                             onClick={() => setCurrent(index)}
-                            className={`w-3 h-3 rounded-full transition ${
-                                current === index ? 'bg-green-600' : 'bg-gray-300'
-                            }`}
+                            className={`w-3 h-3 rounded-full transition ${current === index ? 'bg-green-600' : 'bg-gray-300'
+                                }`}
                         ></button>
                     ))}
                 </div>

@@ -85,7 +85,7 @@ const ProductDetails = () => {
 
                 <div className="mt-12">
                     <div className="tabs tabs-bordered">
-                        <a className="tab tab-active">Description</a>
+                        <a className="tab bg-green-500 text-white rounded-md tab-active">Description</a>
                         <a className="tab">Reviews (1)</a>
                     </div>
                     <div className="p-4 bg-base-200 mt-2 rounded-lg text-gray-700">

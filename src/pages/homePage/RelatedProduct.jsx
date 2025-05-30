@@ -11,7 +11,7 @@ const RelatedProduct = ({categoryId}) => {
     return (
         <section className="py-10 px-4 md:px-16">
             <div className="text-center mb-6">
-                <p className="text-sm text-green-600 font-semibold">Our Products</p>
+                <p className="badge bg-gray-50 text-sm text-green-600 font-semibold">Our Products</p>
                 <h2 className="text-3xl md:text-4xl font-bold">Related Products</h2>
             </div>
 
