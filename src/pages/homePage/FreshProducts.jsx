@@ -35,9 +35,9 @@ const FreshProducts = () => {
     }
 
     return (
-        <section className="py-10 px-4 md:px-16">
+        <section className="max-w-[1200px] w-full mx-auto pt-10 px-4 md:px-16">
             <div className="text-center mb-6">
-                <p className="text-sm text-green-600 font-semibold">Our Products</p>
+                <p className="btn badge bg-gray-50 text-sm text-green-600 font-semibold">Our Products</p>
                 <h2 className="text-3xl md:text-4xl font-bold">Our Fresh Products</h2>
                 <p className="mt-2 text-gray-500 max-w-xl mx-auto">
                     We pride ourselves on offering a wide variety of fresh and flavorful fruits,
@@ -56,13 +56,13 @@ const FreshProducts = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {displayedProducts.map((product) => (
                     <div
                         key={product.id}
                         className="card bg-base-100 shadow-md hover:shadow-lg transition duration-300"
                     >
-                        <figure className=" px-4 pt-4 bg-gray-50 m-4 mb-0 pb-4 rounded-md">
+                        <figure className=" px-4 pt-4 bg-gray-50 mx-4 mt-4 pb-4 rounded-md">
                             <img
                                 src={`${product.images}`}
                                 alt={product.productName}
@@ -88,7 +88,7 @@ const FreshProducts = () => {
                 <div className="text-center mt-8">
                     <button
                         onClick={() => setShowAll(true)}
-                        className="btn btn-outline btn-sm md:btn-md px-6 text-orange-500 border-orange-500"
+                        className="btn bg-white border-[#ff6900] text-[#ff6900] hover:bg-[#ff6900] hover:text-white transition duration-500"
                     >
                         See All Products
                     </button>

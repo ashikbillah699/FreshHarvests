@@ -1,10 +1,10 @@
-import React from 'react';
+import bannerImg from "../../assets/BannerImg.png"
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const Banner = () => {
     return (
-        <div className=''>
-            <section className="max-w-[1200px] mx-auto bg-white dark:bg-neutral text-neutral-content py-10 px-4 md:px-10 ">
+        <div className='bg-gray-50'>
+            <section className="max-w-[1200px] mx-auto dark:bg-neutral text-neutral-content py-10 px-4 md:px-10 ">
                 <div className="container text-center md:text-start mx-auto grid md:grid-cols-2 items-center gap-10">
                     {/* Text Content */}
                     <div className="space-y-6">
@@ -40,9 +40,9 @@ const Banner = () => {
                     {/* Image */}
                     <div className="relative">
                         <img
-                            src="https://thumbs.dreamstime.com/b/sweet-girl-vegetables-white-background-paper-bag-75508314.jpg"
+                            src={bannerImg}
                             alt="Girl with veggies"
-                            className="w-full max-w-xl md:h-[600px] mx-auto md:mx-0"
+                            className="w-full max-w-xl md:h-[550px] lg:h-[650px] mx-auto md:mx-0"
                         />
                         <img
                             src="https://img.freepik.com/free-photo/healthy-vegetables-wooden-table_1150-38014.jpg"

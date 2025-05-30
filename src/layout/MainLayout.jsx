@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
     return (
-        <div className='w-[1200px] mx-auto'>
+        <div className=''>
             <div>
                 <Navbar></Navbar>
             </div>
