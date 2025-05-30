@@ -5,7 +5,7 @@ import musromImg from '../../assets/cardImg.JPG';
 
 const About = () => {
     return (
-       <div className=' max-w-[1200px] w-full mx-auto flex flex-col items-center md:flex-row mb-16'>
+       <div id='about' className=' max-w-[1200px] w-full mx-auto flex flex-col items-center md:flex-row mb-16'>
             <div className='w-full md:w-1/2 relative'>
                 <div className='absolute right-10 top-10'>
                     <img src={leaf} alt=""  className='w-16'/>

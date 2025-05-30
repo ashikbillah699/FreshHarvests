@@ -4,6 +4,7 @@ import { FiMinus, FiPlus } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
 import RelatedProduct from './RelatedProduct';
 import useCategories from '../../hooks/useCategories';
+import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -27,6 +28,10 @@ const ProductDetails = () => {
 
     const matchedCategory = categories?.find(cat => cat.id === product?.categoryId);
     const categoryName = matchedCategory?.categoryName || "Unknown";
+
+    const handleAddCart = () =>{
+        toast.info("It is a work in progress.")
+    }
 
     if (!product) return <div className="text-center py-10">Loading...<span className="loading loading-spinner loading-lg"></span>
     </div>;
@@ -73,7 +78,7 @@ const ProductDetails = () => {
 
                         <div className="flex flex-wrap items-center gap-4">
                             <button className="btn btn-outline bg-gray-100 hover:bg-gray-200 border-none"><FaHeart className='text-gray-300' />Save as favorite</button>
-                            <button className="btn btn-primary border-none hover:bg-orange-600 bg-orange-500 text-white transition duration-500"><FaShoppingCart className='text-white' /> Add to cart</button>
+                            <button onClick={handleAddCart} className="btn btn-primary border-none hover:bg-orange-600 bg-orange-500 text-white transition duration-500"><FaShoppingCart className='text-white' /> Add to cart</button>
                         </div>
                     </div>
                 </div>

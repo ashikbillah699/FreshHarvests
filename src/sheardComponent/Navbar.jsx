@@ -17,13 +17,13 @@ const Navbar = () => {
                 <NavLink to='/' className={({ isActive }) => isActive ? 'text-[#749B3F]' : ''}>Home</NavLink>
             </li>
             <li>
-                <NavLink to='/shop' className={({ isActive }) => isActive ? 'text-[#749B3F]' : ''}>Shop</NavLink>
+                <a href='#shop' className={({ isActive }) => isActive ? 'text-[#749B3F]' : ''}>Shop</a>
             </li>
             <li>
-                <NavLink to='/about' className={({ isActive }) => isActive ? 'text-[#749B3F]' : ''}>About Us</NavLink>
+                <a href='#about' className={({ isActive }) => isActive ? 'text-[#749B3F]' : ''}>About Us</a>
             </li>
             <li>
-                <NavLink to='/blog' className={({ isActive }) => isActive ? 'text-[#749B3F]' : ''}>Blog</NavLink>
+                <a href='#blog' className={({ isActive }) => isActive ? 'text-[#749B3F]' : ''}>Blog</a>
             </li>
             {user && (
                 <li>

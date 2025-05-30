@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { logoutThunk } from "../features/authThunks";
 import { MdOutlineHomeWork } from "react-icons/md";
 import { RiMenuAddLine } from "react-icons/ri";
@@ -7,11 +7,13 @@ import { ImProfile } from "react-icons/im";
 import useAllUsers from "../hooks/useAllUsers";
 import { FaBasketShopping, FaLeaf, FaProductHunt, FaUsers } from "react-icons/fa6";
 import { FaHistory } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const DashboardLayout = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.auth.user);
     const [users] = useAllUsers()
+    const navigate = useNavigate()
 
     if (!user || !users?.data) {
         return <div className="text-center py-10">Loading...<span className="loading loading-spinner loading-lg"></span></div>;
@@ -19,6 +21,11 @@ const DashboardLayout = () => {
 
     const mainRole = users?.data.find(u => u.email === user.email);
 
+    if (!mainRole || !mainRole.role) {
+        toast.info('Login or sign up as User or Admin from now on at "https://code-commando.com/api/v1/users".');
+        navigate('/')
+    }
+    
     return (
         <div>
             <div className="flex flex-col md:flex-row min-h-screen">

@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Blog = () => {
     return (
-        <div className='w-full max-w-[1200px] mx-auto mt-24'>
+        <div id='blog' className='w-full max-w-[1200px] mx-auto mt-24'>
             <div className="mb-12 text-center">
                 <span className="text-sm text-green-600 font-semibold bg-green-50 px-3 py-1 rounded-full">
                     Our blog
