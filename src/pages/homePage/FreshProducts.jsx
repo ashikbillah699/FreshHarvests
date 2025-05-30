@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useCategories from "../../hooks/useCategories";
+import { BiSolidCommentDetail } from "react-icons/bi";
 
 const FreshProducts = () => {
     const [categories] = useCategories();
@@ -73,7 +74,7 @@ const FreshProducts = () => {
                             <div className="w-full">
                                 <Link to={`/productDetails/${product.id}`}>
                                     <button className="btn btn-sm mt-2 bg-white text-black w-full hover:bg-orange-500 hover:text-white transition duration-500">
-                                        <FaShoppingCart className="mr-1" /> Add to cart
+                                        <BiSolidCommentDetail className="mr-1" /> See Details
                                     </button>
                                 </Link>
                             </div>
